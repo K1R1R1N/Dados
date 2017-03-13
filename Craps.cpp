@@ -102,13 +102,14 @@ char continua()
 	{
 		cout << "Desea continuar?...(Y/N)";
 		std::cin >> ans;
+		ans = tolower(ans);
 	
-		if( tolower(ans) != 'y' && tolower(ans) != 'n' )
+		if( ans != 'y' && ans != 'n' )
 		cout << "\aPresione Y or N !" << endl;
 	}
-	while( tolower(ans) != 'y' && tolower(ans) != 'n' );
+	while( ans != 'y' && ans != 'n' );
 	
-	return tolower(ans);
+	return ans;
 }
 
 void descripcion()
