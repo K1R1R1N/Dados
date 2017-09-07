@@ -17,14 +17,14 @@ int main()
 	int suma;
 
 	srand( time(0) );
-	system("color b");
+	system("color c");
 	system("cls");
 	descripcion();
 
 	do
 	{
 		system("cls");
-	
+
 		suma = tiraDados();
 
 		resultado( suma );
@@ -46,7 +46,7 @@ int tiraDados()
 
 	cout << "El jugador tiro " << dado1 << " + " << dado2 << " = " << sumaTrabajo << endl << endl;
 
-	return sumaTrabajo; 
+	return sumaTrabajo;
 }
 
 void resultado( int suma)
@@ -54,7 +54,7 @@ void resultado( int suma)
 	enum Status { CONTINUA, GANA, PIERDE };
 
 	int miPunto;
-	
+
 	Status estadoJuego;
 
 	switch( suma )
@@ -90,7 +90,7 @@ void resultado( int suma)
 
 	if( estadoJuego == GANA )
 		cout << "El jugador gana" << endl;
-	else 
+	else
 		cout << "El jugador pierde" << endl;
 }
 
@@ -102,17 +102,17 @@ char continua()
 	{
 		cout << "Desea continuar?...(Y/N)";
 		std::cin >> ans;
-	
+
 		if( tolower(ans) != 'y' && tolower(ans) != 'n' )
 		cout << "\aPresione Y or N !" << endl;
 	}
 	while( tolower(ans) != 'y' && tolower(ans) != 'n' );
-	
+
 	return tolower(ans);
 }
 
 void descripcion()
-{	
+{
 	cout << std::setw(45) << "INSTRUCCIONES\n";
     cout << "============================================================================\n";
     cout << " Un jugador lanza 2 dados. Una vez que los dados caen, se calcula la suma\n"
